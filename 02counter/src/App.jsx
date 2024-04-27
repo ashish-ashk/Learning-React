@@ -5,7 +5,7 @@ import './App.css'
 
 function App() {
 
-  let [counter, setCounter] = useState(0)
+  const [counter, setCounter] = useState(0)
 
   //let counter=5
 
@@ -13,7 +13,10 @@ function App() {
     //counter=counter+1;
     if(counter==20)
     return
-    setCounter(counter+1)
+    setCounter((prevCounter) => prevCounter+1)
+    setCounter(prevCounter => prevCounter+1)
+    setCounter(prevCounter => prevCounter+1)
+    setCounter(prevCounter => prevCounter+1)
   }
 
   const subValue = () => {
@@ -30,7 +33,7 @@ function App() {
        <button onClick={addValue}>Add value</button>
        <br/>
        <button onClick={subValue}>Decrease value</button>
-       <p>Value :{counter}</p>
+       <p>footer: {counter}</p>
     </>
   )
 }
